@@ -57,7 +57,6 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="/spec">Specification</a></li>
 		 </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -65,12 +64,12 @@
 
     <div class="container">
 
-	  <div  class="starter-template">
+	  <div class="starter-template">
 	        <h1>Phishing formation</h1>
 	       <form id="submission" action="/gen" method="POST">
 				  <div class="form-group">
 				    <label for="emailAddress">Email address</label>
-				    <input name="client_email" type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
+				    <input name="emailAddr" type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
 				  </div>
 				
 				 <div class="form-group">
@@ -85,10 +84,10 @@
 				  </div>
 				  <div class="form-group">
 				    <label for="complexity">Phishing complexity level</label>
-				    <select name="more_selection" multiple class="form-control" id="complexity">
-				      <option>1 : Low, email spam level</option>
-				      <option>2 : Medium, attacks appeariing as common service logins (Google, Dropbox)</option>
-				      <option>3 : High, Targetted attacks defeating multifactor auth.</option>
+				    <select name="attackComplexity" multiple class="form-control" id="complexity">
+				      <option value="1" >1 : Low, email spam level</option>
+				      <option value="2" >2 : Medium, attacks appeariing as common service logins (Google, Dropbox)</option>
+				      <option value="3" >3 : High, Targetted attacks defeating multifactor auth.</option>
 				    </select>
 				  </div>
 				  <div class="form-group">
@@ -126,6 +125,9 @@
 					
 					success: function(data) {
 						$('#submissionButton').css("background-color", "#039803");
+						console.log(data);
+						$('.starter-template').replaceWith(data);
+						
 					},
 					
 					error: function(jXHR, text, error) {
