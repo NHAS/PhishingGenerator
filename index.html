@@ -289,6 +289,16 @@
 
 			});
 			
+			
+			$('.collapse').on('shown.bs.collapse', function(e){
+			
+				$('html,body').animate({
+					scrollTop: ($(e.target).offset().top -100)
+				},500);
+				
+				
+			});
+			
 		});
 
 	</script>
