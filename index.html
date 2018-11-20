@@ -48,9 +48,6 @@
     </nav>
 
     <div class="container">
-	
-	
-
 	  <div class="starter-template">
 			<img src="assets/images/phish_eating1.png" width="300px">
 		
@@ -73,25 +70,22 @@
 				 
 				  </div>
 				  <div class="form-group">
-				    <label for="insiderInformation">Information about staff</label>
+				    <label for="insiderInformation">Notes</label>
 				    <textarea name="staffInfo" class="form-control" id="insiderInformation" rows="3"></textarea>
 				  </div>
-				<div class="text-right">
-					<button id="submissionButton" class="btn btn-primary" type="submit" value="Submit"> Submit </button> 
-				</div> 
 			</form>
 			
 	 </div>
 
 		<h2>Attack Complexity</h2> 		
-		<div id="accordion" class="panel-group">
+		<div id="optionsAccordion" class="accordion panel-group">
 		    <div class="panel panel-default">
 		        <div class="panel-heading">
 		            <h4 class="panel-title">
-		                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Beginner</a>
+		                <a class="accordion-toggle" data-toggle="collapse" href="#collapseOne">1. Beginner</a>
 		            </h4>
 		        </div>
-		        <div id="collapseOne" class="panel-collapse collapse show">
+		        <div id="collapseOne" class="panel-collapse collapse" data-parent="#optionsAccordion">
 		            <div class="panel-body">
 					
 						<div class="text-center">
@@ -121,10 +115,10 @@
 		    <div class="panel panel-default">
 		        <div class="panel-heading">
 		            <h4 class="panel-title">
-		                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. Intermediate</a>
+		                <a class="accordion-toggle" data-toggle="collapse" href="#collapseTwo">2. Intermediate</a>
 		            </h4>
 		        </div>
-		        <div id="collapseTwo" class="panel-collapse collapse">
+		        <div id="collapseTwo" class="panel-collapse collapse"  data-parent="#optionsAccordion" >
 		            <div class="panel-body">
 						<div class="text-center">
 							<img src="assets/images/phishing_Intermediate.png"  width=300px>
@@ -167,10 +161,10 @@
 		    <div class="panel panel-default">
 		        <div class="panel-heading">
 		            <h4 class="panel-title">
-		                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Advanced</a>
+		                <a class="accordion-toggle" data-toggle="collapse" href="#collapseThree">3. Advanced</a>
 		            </h4>
 		        </div>
-		        <div id="collapseThree" class="panel-collapse collapse">
+		        <div id="collapseThree" class="panel-collapse collapse" data-parent="#optionsAccordion" >
 		            <div class="panel-body">
 						<div class="text-center">
 							<img src="assets/images/phishing_advanced.png"  width=300px>
@@ -215,10 +209,10 @@
 			 <div class="panel panel-default">
 		        <div class="panel-heading">
 		            <h4 class="panel-title">
-		                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"> 4. Expert</a>
+		                <a class="accordion-toggle" data-toggle="collapse" href="#collapseFour"> 4. Expert</a>
 		            </h4>
 		        </div>
-		        <div id="collapseFour" class="panel-collapse collapse">
+		        <div id="collapseFour" class="panel-collapse collapse" data-parent="#optionsAccordion">
 		            <div class="panel-body">
 						<div class="text-center">
 							<img src="assets/images/phishing_expert.png"  width=300px>
@@ -255,7 +249,13 @@
 		            </div>
 		        </div>
 		    </div>
+			
+			<div class="text-right" style="padding-top: 10px">
+				<button id="submissionButton" class="btn btn-primary" type="submit" value="Submit"> Submit </button> 
+			</div> 
 		</div>
+		
+		
 	
 	</div>
 
@@ -268,17 +268,17 @@
 	<script>
 		$(document).ready(function() {
 			
-			$('#submission').on('submit', function(e) {
+			$('#submissionButton').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({
-					url: $(this).attr('action'),
+					url: $('#submission').attr('action'),
 					type: "GET",
-					data: $(this).serialize(),
+					data: $('#submission').serialize(),
 					
 					success: function(data) {
 						$('#submissionButton').css("background-color", "#039803");
 						console.log(data);
-						$('.starter-template').replaceWith(data);
+						//$('.starter-template').replaceWith(data);
 						
 					},
 					

@@ -46,6 +46,8 @@ func generateSpec(writer http.ResponseWriter, read *http.Request) {
 		fmt.Fprint(writer, "<h1> An error has occurred </h1>")
 	}
 
+	log.Println("Form submitted")
+
 }
 
 func main() {
