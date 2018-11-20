@@ -51,7 +51,7 @@ func generateSpec(writer http.ResponseWriter, read *http.Request) {
 	log.Println("emailAddr: ", generation.EmailAddr)
 	log.Println("domain: ", generation.Domain)
 	log.Println("employeesNum: ", generation.NumEmployees)
-	log.Println("atackComplexity: ", generation.Complexity)
+	log.Println("attackComplexity: ", generation.Complexity)
 	log.Println("notes: ", generation.Information)
 }
 
