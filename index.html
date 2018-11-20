@@ -13,21 +13,6 @@
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 	
 	<style>
 		body {
@@ -37,6 +22,8 @@
 		  padding: 40px 15px;
 		  text-align: center;
 		}
+		
+		
 		
 	</style>
   </head>
@@ -65,7 +52,9 @@
     <div class="container">
 
 	  <div class="starter-template">
-	        <h1>Phishing formation</h1>
+			<img src="assets/images/phish_eating1.png" width="300px">
+	
+	       <h1>General Information</h1>
 	       <form id="submission" action="/gen" method="POST">
 				  <div class="form-group">
 				    <label for="emailAddress">Email address</label>
@@ -94,25 +83,94 @@
 				    <label for="insiderInformation">Information about staff</label>
 				    <textarea name="staffInfo" class="form-control" id="insiderInformation" rows="3"></textarea>
 				  </div>
-				<div class="form-group">
-					<button id="submissionButton" class="btn btn-primary" type="submit" value="Submit"> Submit here</button> 
+				<div class="text-right">
+					<button id="submissionButton" class="btn btn-primary" type="submit" value="Submit"> Submit </button> 
 				</div> 
 			</form>
 			
 	 </div>
-	
-	
 
-    </div><!-- /.container -->
+		<h2>Attack Complexity</h2>
+		<p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+ 		
+		<div id="accordion" class="panel-group">
+		    <div class="panel panel-default">
+		        <div class="panel-heading">
+		            <h4 class="panel-title">
+		                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Beginner</a>
+		            </h4>
+		        </div>
+		        <div id="collapseOne" class="panel-collapse collapse show">
+		            <div class="panel-body">
+						
+						
+						<h4> Descrption </h5>
+						<p>A very generic phishing email that does not contain any personal details about the target. The email will usually contain a link or URL that the target is tricked into following. </p>
 
+						<h4 style="padding-top: 25px;"> Characteristics </h5>
+							<ul class="list-group">
+								<li class="list-group-item"> + Generic greeting, not tailored or personalised to the target. </li>
+								<li class="list-group-item"> + Hyperlinks and URLs may contain typo'd domain name. </li>
+								<li class="list-group-item"> + Email may contain typo's. </li>
+								<li class="list-group-item"> + Target is not required to enter credentials. </li>
+							</ul>
+						<h4 style="padding-top: 25px"> Capabilities </h4>
+							<ul class="list-group">
+								<li class="list-group-item"> + Track number of targets who click or follow the malicious links</li>
+							</ul>
+						
+						<h4 style="padding-top: 25px"> Example </h4>
+						
+		            </div>
+		        </div>
+		    </div>
+		    <div class="panel panel-default">
+		        <div class="panel-heading">
+		            <h4 class="panel-title">
+		                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. Intermediate</a>
+		            </h4>
+		        </div>
+		        <div id="collapseTwo" class="panel-collapse collapse">
+		            <div class="panel-body">
+		                <p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="panel panel-default">
+		        <div class="panel-heading">
+		            <h4 class="panel-title">
+		                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Advanced</a>
+		            </h4>
+		        </div>
+		        <div id="collapseThree" class="panel-collapse collapse">
+		            <div class="panel-body">
+		                <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+		            </div>
+		        </div>
+		    </div>
+			
+			 <div class="panel panel-default">
+		        <div class="panel-heading">
+		            <h4 class="panel-title">
+		                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"> 4. Expert</a>
+		            </h4>
+		        </div>
+		        <div id="collapseFour" class="panel-collapse collapse">
+		            <div class="panel-body">
+		                <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	
+	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/bootstrap.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			
