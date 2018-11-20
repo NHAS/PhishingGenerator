@@ -8,11 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Phishing information</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/bootstrap.min.css"> 
 	
 	<style>
 		body {
@@ -27,8 +27,7 @@
   </head>
 
   <body>
-	  <div id="templateReplace">
-	    <nav class="navbar navbar-inverse navbar-fixed-top">
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
 	      <div class="container">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -41,11 +40,15 @@
 	        </div>
 	        <div id="navbar" class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">Home</a></li>
+	            <li class="active"><a href="/">Home</a></li>
 			 </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </nav>
+
+
+	  <div id="templateReplace">
+	   
 	
 	    <div class="container">
 		  <div class="starter-template">
@@ -71,7 +74,7 @@
 					  </div>
 					  <div class="form-group">
 					    <label for="insiderInformation">Notes</label>
-					    <textarea name="staffInfo" class="form-control" id="insiderInformation" rows="3"></textarea>
+					    <textarea name="notes" class="form-control" id="insiderInformation" rows="3"></textarea>
 					  </div>
 				</form>
 				
@@ -271,10 +274,18 @@
 				var element = $('a[aria-expanded=true]');
 
 				if(element.length != 0) {
-					var complexityType =  encodeURI(element.text());
 					
-					$('#submission').append('<input type="hidden" name="atackComplexity" value="'+complexityType+'" />');
-					$('#submission').submit();
+					$('#submission').append('<input type="hidden" name="attackComplexity" value="'+element.text()+'" />');
+					
+					$.ajax({
+						type: "POST",
+						url: $('#submission').attr('action'),
+						data: $('#submission').serialize(),
+						success: function(data) {
+							$('#templateReplace').replaceWith(data);
+						}
+					});
+					
 				} else {
 					$('#attackComplexityHeading').css("color","red");
 					$('#buttonShake').effect("shake");
@@ -285,7 +296,7 @@
 			
 				$('html,body').animate({
 					scrollTop: ($(e.target).offset().top -100)
-				},500);
+				},200);
 				
 				
 			});

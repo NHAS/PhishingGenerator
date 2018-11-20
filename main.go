@@ -26,7 +26,6 @@ type Data struct {
 	NumEmployees string
 	Complexity   string
 	Information  string
-	Args         string
 }
 
 var phishingExamples *template.Template
@@ -39,9 +38,9 @@ func generateSpec(writer http.ResponseWriter, read *http.Request) {
 	generation := &Data{read.FormValue("emailAddr"),
 		read.FormValue("domain"),
 		read.FormValue("employeesNum"),
-		read.FormValue("atackComplexity"),
-		read.FormValue("staffInfo"),
-		read.FormValue("args")}
+		read.FormValue("attackComplexity"),
+		read.FormValue("notes"),
+	}
 
 	err = phishingExamples.Execute(writer, generation)
 	if err != nil {
@@ -53,9 +52,7 @@ func generateSpec(writer http.ResponseWriter, read *http.Request) {
 	log.Println("domain: ", generation.Domain)
 	log.Println("employeesNum: ", generation.NumEmployees)
 	log.Println("atackComplexity: ", generation.Complexity)
-	log.Println("staffInfo: ", generation.Information)
-	log.Println("args: ", generation.Args)
-
+	log.Println("notes: ", generation.Information)
 }
 
 func main() {

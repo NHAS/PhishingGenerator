@@ -1,15 +1,64 @@
-<div class="starter-template">
+<style> 
+h3 {
+  margin-top: 2rem;
+}
+[class*="col-"] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(86, 61, 124, .15);
+  border: 1px solid rgba(86, 61, 124, .2);
+}
+
+@media print [class*="col-"] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(86, 61, 124, .15);
+  border: 1px solid rgba(86, 61, 124, .2);
+}
+
+
+</style>
+
+
+<div class="starter-template" style="max-width: 2481px;">
 	<div class="container">
 	  <div class="row">
-	    <div class="col-sm">
-	      Example site one {{.EmailAddr}}
-	    </div>
-	    <div class="col-sm">
-	       Example site two {{.Domain}}
-	    </div>
-	    <div class="col-sm">
-	       Example site three
-	    </div>
-	  </div>
+	        <div class="col-12 col-md-12"><h4>Aura Software Security Phishing Form</h4></div>
+      </div>
+
+	  <div class="row">
+	        <div class="col-6 col-md-6">Email:</div>
+	        <div class="col-6 col-md-6">{{.EmailAddr}}</div>
+      </div>
+	
+	 <div class="row">
+        <div class="col-6 col-md-6">Domain:</div>
+        <div class="col-6 col-md-6">{{.Domain}}</div>
+  	 </div>
+	
+	 <div class="row">
+        <div class="col-6 col-md-6">Number of Employees:</div>
+        <div class="col-6 col-md-6">{{.NumEmployees}}</div>
+  	 </div>
+	
+	<div class="row">
+        <div class="col-6 col-md-6">Attack Complexity:</div>
+        <div class="col-6 col-md-6">{{.Complexity}}</div>
+  	 </div>
+	
+	
+	<div class="row">
+        <div class="col-12 col-md-12 text-left">
+			<h5> Notes: </h5>
+			{{.Information}}
+		</div>
+  	 </div>
+	
+	<div class="row">
+        <div class="col-12 col-md-12 text-left">
+			Signature:
+		</div>
+  	 </div>
+
 	</div>
 </div>
