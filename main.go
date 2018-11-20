@@ -26,13 +26,12 @@ type Data struct {
 	NumEmployees string
 	Complexity   string
 	Information  string
-	Args		 string
+	Args         string
 }
 
 var phishingExamples *template.Template
 
 func generateSpec(writer http.ResponseWriter, read *http.Request) {
-	log.Println("Form submitted")
 
 	read.ParseForm()
 	//map[staffInfo:[] emailAddr:[] domain:[] employeesNum:[]]
@@ -41,7 +40,7 @@ func generateSpec(writer http.ResponseWriter, read *http.Request) {
 		read.FormValue("domain"),
 		read.FormValue("employeesNum"),
 		read.FormValue("atackComplexity"),
-		read.FormValue("staffInfo")
+		read.FormValue("staffInfo"),
 		read.FormValue("args")}
 
 	err = phishingExamples.Execute(writer, generation)
@@ -49,6 +48,13 @@ func generateSpec(writer http.ResponseWriter, read *http.Request) {
 		log.Print("Error encountered: ", err)
 		fmt.Fprint(writer, "<h1> An error has occurred </h1>")
 	}
+
+	log.Println("emailAddr: ", generation.EmailAddr)
+	log.Println("domain: ", generation.Domain)
+	log.Println("employeesNum: ", generation.NumEmployees)
+	log.Println("atackComplexity: ", generation.Complexity)
+	log.Println("staffInfo: ", generation.Information)
+	log.Println("args: ", generation.Args)
 
 }
 
