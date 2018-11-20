@@ -27,269 +27,252 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Phishinator</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-		 </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container">
-	  <div class="starter-template">
-			<img src="assets/images/phish_eating1.png" width="300px">
-		
+	  <div id="templateReplace">
+	    <nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">Phishinator</a>
+	        </div>
+	        <div id="navbar" class="collapse navbar-collapse">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Home</a></li>
+			 </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
 	
-	       <h1>General Information</h1>
-	       <form id="submission" action="/gen" method="POST">
-				  <div class="form-group">
-				    <label for="emailAddress">Email address</label>
-				    <input name="emailAddr" type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
-				  </div>
+	    <div class="container">
+		  <div class="starter-template">
+				<img src="assets/images/phish_eating1.png" width="300px">
+			
+		
+		       <h1>General Information</h1>
+		       <form id="submission" action="/gen" method="POST">
+					  <div class="form-group">
+					    <label for="emailAddress">Email address</label>
+					    <input name="emailAddr" type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
+					  </div>
+					
+					 <div class="form-group">
+					    <label for="domainName">Phishing domain</label>
+					    <input name="domain" type="text" class="form-control" id="domainName" placeholder="example.com">
+					  </div>
+					
+					  <div class="form-group">
+					    <label for="targetNum">Number of employees to target</label>
+					    <input type="number" name="employeesNum" class="form-control" id="targetNum" min="0">
+					 
+					  </div>
+					  <div class="form-group">
+					    <label for="insiderInformation">Notes</label>
+					    <textarea name="staffInfo" class="form-control" id="insiderInformation" rows="3"></textarea>
+					  </div>
+				</form>
 				
-				 <div class="form-group">
-				    <label for="domainName">Phishing domain</label>
-				    <input name="domain" type="text" class="form-control" id="domainName" placeholder="example.com">
-				  </div>
+		 </div>
+	
+			<h2>Attack Complexity</h2> 		
+			<div id="optionsAccordion" class="accordion panel-group">
+			    <div class="panel panel-default">
+			        <div class="panel-heading">
+			            <h4 class="panel-title">
+			                <a class="accordion-toggle" data-toggle="collapse" href="#collapseOne">1. Beginner</a>
+			            </h4>
+			        </div>
+			        <div id="collapseOne" class="panel-collapse collapse" data-parent="#optionsAccordion">
+			            <div class="panel-body">
+						
+							<div class="text-center">
+								<img src="assets/images/phishing_beginner.png"  width=300px>
+							</div>
+							
+							<h4> Descrption </h5>
+							<p>A very generic phishing email that does not contain any personal details about the target. The email will usually contain a link or URL that the target is tricked into following. </p>
+	
+							<h4 style="padding-top: 25px;"> Characteristics </h5>
+								<ul class="list-group">
+									<li class="list-group-item"> + Generic greeting, not tailored or personalised to the target. </li>
+									<li class="list-group-item"> + Hyperlinks and URLs may contain typo'd domain name. </li>
+									<li class="list-group-item"> + Email may contain typo's. </li>
+									<li class="list-group-item"> + Target is not required to enter credentials. </li>
+								</ul>
+							<h4 style="padding-top: 25px"> Capabilities </h4>
+								<ul class="list-group">
+									<li class="list-group-item"> + Track number of targets who click or follow the malicious links</li>
+								</ul>
+							
+							<h4 style="padding-top: 25px"> Example </h4>
+							
+			            </div>
+			        </div>
+			    </div>
+			    <div class="panel panel-default">
+			        <div class="panel-heading">
+			            <h4 class="panel-title">
+			                <a class="accordion-toggle" data-toggle="collapse" href="#collapseTwo">2. Intermediate</a>
+			            </h4>
+			        </div>
+			        <div id="collapseTwo" class="panel-collapse collapse"  data-parent="#optionsAccordion" >
+			            <div class="panel-body">
+							<div class="text-center">
+								<img src="assets/images/phishing_Intermediate.png"  width=300px>
+							</div>
+							
+							<h4> Description </h5>
+							<p>Phishing email that looks as if it comes from a legitimate or trustworthy source and is sent to the target with a request to click a link or open an attachment. The email may contain personal details about the target such as their name, title, etcetera. </p>
+	
+							<h4 style="padding-top: 25px;"> Characteristics </h5>
+								<ul class="list-group">
+									<li class="list-group-item"> + Personalised greeting. </li>
+									<li class="list-group-item"> + Email and URLs are more gramatically correct. However, numbers and dates might be incorrect. </li>
+									<li class="list-group-item"> + Hyperlinks or URLs use http instead of https. </li>
+									<li class="list-group-item"> + Target is not required to enter credentials. </li>
+								</ul>
+							<h4 style="padding-top: 25px"> Capabilities </h4>
+								<ul class="list-group">
+									<li class="list-group-item"> + Track number of targets who click or follow the malicious links. </li>
+									<li class="list-group-item"> + Track number of targets who download and open malicious attachments. </li>
+								</ul>
+							
+							<h4 style="padding-top: 25px"> Examples </h4>
+							<div class="row">
+								<div class="col-lg-6 col-md-5 col-xs-5 thumb">
+								    <a class="thumbnail" href="#">
+								        <img class="img-responsive" src="assets/images/dropbox_phishing.png" alt="">
+								    </a>
+								</div>
+								<div class="col-lg-6 col-md-5 col-xs-5 thumb">
+								    <a class="thumbnail" href="#">
+								        <img class="img-responsive" src="assets/images/oversized-attachement.png" alt="">
+								    </a>
+								</div>
+							</div>
+						
+							
+			            </div>
+			        </div>
+			    </div>
+			    <div class="panel panel-default">
+			        <div class="panel-heading">
+			            <h4 class="panel-title">
+			                <a class="accordion-toggle" data-toggle="collapse" href="#collapseThree">3. Advanced</a>
+			            </h4>
+			        </div>
+			        <div id="collapseThree" class="panel-collapse collapse" data-parent="#optionsAccordion" >
+			            <div class="panel-body">
+							<div class="text-center">
+								<img src="assets/images/phishing_advanced.png"  width=300px>
+							</div>
+							
+							<h4> Description </h5>
+							<p> A phishing email that appears to come from internal source such as the company IT Service    Desk. The target is pressured into providing their corporate domain credentials to keep their accounts from being de-activated or deleted.  </p>
+	
+							<h4 style="padding-top: 25px;"> Characteristics </h5>
+								<ul class="list-group">
+									<li class="list-group-item"> + Personalised greeting. </li>
+									<li class="list-group-item"> + Hyperlink use https and look secure / safe. </li>
+									<li class="list-group-item"> + Target is required to enter credentials. </li>
+									<li class="list-group-item"> + Subject may be marked with high importance. </li>
+									<li class="list-group-item"> + Tone of the phishing email is quite insistent and urges the user to complete a task. </li>
+									<li class="list-group-item"> + Warning of some kind telling you that you need to act immediately OR ELSE. </li>
+									<li class="list-group-item"> + Appear to be sent from within an organization (IT or Service Desk, for example). </li>
+								</ul>
+							<h4 style="padding-top: 25px"> Capabilities </h4>
+								<ul class="list-group">
+									<li class="list-group-item"> + Attempt to gather corporate user's domain credentials. </li>
+									<li class="list-group-item"> + Phishing 2FA / MFA codes. </li>
+									<li class="list-group-item"> + Attempt to gain remote access to internal network, desktop workstations, internal & external applications and services. </li>
+								</ul>
+							
+							<h4 style="padding-top: 25px"> Examples </h4>
+								
+							<div class="well">
+								<p> Hi {{.User}}, </p>
+								<p> The IT service desk is currently auditing all categories of accounts that are no longer required. Any user accounts which are no longer required will be deactivated and removed from the system. <p>
+								<p> We require all staff verify that the account is active by logging in here. </p>
+								<p> If you account is not confirmed within 48 hours, your account will be deactivated and you will not be able to access our internal services. </p>
+	
+								<p> Best Regards, </p>
+								<p> Service Desk</p>
+							</div>					
+						
+			            </div>
+			        </div>
+			    </div>
 				
-				  <div class="form-group">
-				    <label for="targetNum">Number of employees to target</label>
-				    <input type="number" name="employeesNum" class="form-control" id="targetNum" min="0">
-				 
-				  </div>
-				  <div class="form-group">
-				    <label for="insiderInformation">Notes</label>
-				    <textarea name="staffInfo" class="form-control" id="insiderInformation" rows="3"></textarea>
-				  </div>
-			</form>
-			
-	 </div>
-
-		<h2>Attack Complexity</h2> 		
-		<div id="optionsAccordion" class="accordion panel-group">
-		    <div class="panel panel-default">
-		        <div class="panel-heading">
-		            <h4 class="panel-title">
-		                <a class="accordion-toggle" data-toggle="collapse" href="#collapseOne">1. Beginner</a>
-		            </h4>
-		        </div>
-		        <div id="collapseOne" class="panel-collapse collapse" data-parent="#optionsAccordion">
-		            <div class="panel-body">
-					
-						<div class="text-center">
-							<img src="assets/images/phishing_beginner.png"  width=300px>
-						</div>
-						
-						<h4> Descrption </h5>
-						<p>A very generic phishing email that does not contain any personal details about the target. The email will usually contain a link or URL that the target is tricked into following. </p>
-
-						<h4 style="padding-top: 25px;"> Characteristics </h5>
-							<ul class="list-group">
-								<li class="list-group-item"> + Generic greeting, not tailored or personalised to the target. </li>
-								<li class="list-group-item"> + Hyperlinks and URLs may contain typo'd domain name. </li>
-								<li class="list-group-item"> + Email may contain typo's. </li>
-								<li class="list-group-item"> + Target is not required to enter credentials. </li>
-							</ul>
-						<h4 style="padding-top: 25px"> Capabilities </h4>
-							<ul class="list-group">
-								<li class="list-group-item"> + Track number of targets who click or follow the malicious links</li>
-							</ul>
-						
-						<h4 style="padding-top: 25px"> Example </h4>
-						
-		            </div>
-		        </div>
-		    </div>
-		    <div class="panel panel-default">
-		        <div class="panel-heading">
-		            <h4 class="panel-title">
-		                <a class="accordion-toggle" data-toggle="collapse" href="#collapseTwo">2. Intermediate</a>
-		            </h4>
-		        </div>
-		        <div id="collapseTwo" class="panel-collapse collapse"  data-parent="#optionsAccordion" >
-		            <div class="panel-body">
-						<div class="text-center">
-							<img src="assets/images/phishing_Intermediate.png"  width=300px>
-						</div>
-						
-						<h4> Description </h5>
-						<p>Phishing email that looks as if it comes from a legitimate or trustworthy source and is sent to the target with a request to click a link or open an attachment. The email may contain personal details about the target such as their name, title, etcetera. </p>
-
-						<h4 style="padding-top: 25px;"> Characteristics </h5>
-							<ul class="list-group">
-								<li class="list-group-item"> + Personalised greeting. </li>
-								<li class="list-group-item"> + Email and URLs are more gramatically correct. However, numbers and dates might be incorrect. </li>
-								<li class="list-group-item"> + Hyperlinks or URLs use http instead of https. </li>
-								<li class="list-group-item"> + Target is not required to enter credentials. </li>
-							</ul>
-						<h4 style="padding-top: 25px"> Capabilities </h4>
-							<ul class="list-group">
-								<li class="list-group-item"> + Track number of targets who click or follow the malicious links. </li>
-								<li class="list-group-item"> + Track number of targets who download and open malicious attachments. </li>
-							</ul>
-						
-						<h4 style="padding-top: 25px"> Examples </h4>
-						<div class="row">
-							<div class="col-lg-6 col-md-5 col-xs-5 thumb">
-							    <a class="thumbnail" href="#">
-							        <img class="img-responsive" src="assets/images/dropbox_phishing.png" alt="">
-							    </a>
+				 <div class="panel panel-default">
+			        <div class="panel-heading">
+			            <h4 class="panel-title">
+			                <a class="accordion-toggle" data-toggle="collapse" href="#collapseFour"> 4. Expert</a>
+			            </h4>
+			        </div>
+			        <div id="collapseFour" class="panel-collapse collapse" data-parent="#optionsAccordion">
+			            <div class="panel-body">
+							<div class="text-center">
+								<img src="assets/images/phishing_expert.png"  width=300px>
 							</div>
-							<div class="col-lg-6 col-md-5 col-xs-5 thumb">
-							    <a class="thumbnail" href="#">
-							        <img class="img-responsive" src="assets/images/oversized-attachement.png" alt="">
-							    </a>
-							</div>
-						</div>
-					
-						
-		            </div>
-		        </div>
-		    </div>
-		    <div class="panel panel-default">
-		        <div class="panel-heading">
-		            <h4 class="panel-title">
-		                <a class="accordion-toggle" data-toggle="collapse" href="#collapseThree">3. Advanced</a>
-		            </h4>
-		        </div>
-		        <div id="collapseThree" class="panel-collapse collapse" data-parent="#optionsAccordion" >
-		            <div class="panel-body">
-						<div class="text-center">
-							<img src="assets/images/phishing_advanced.png"  width=300px>
-						</div>
-						
-						<h4> Description </h5>
-						<p> A phishing email that appears to come from internal source such as the company IT Service    Desk. The target is pressured into providing their corporate domain credentials to keep their accounts from being de-activated or deleted.  </p>
-
-						<h4 style="padding-top: 25px;"> Characteristics </h5>
-							<ul class="list-group">
-								<li class="list-group-item"> + Personalised greeting. </li>
-								<li class="list-group-item"> + Hyperlink use https and look secure / safe. </li>
-								<li class="list-group-item"> + Target is required to enter credentials. </li>
-								<li class="list-group-item"> + Subject may be marked with high importance. </li>
-								<li class="list-group-item"> + Tone of the phishing email is quite insistent and urges the user to complete a task. </li>
-								<li class="list-group-item"> + Warning of some kind telling you that you need to act immediately OR ELSE. </li>
-								<li class="list-group-item"> + Appear to be sent from within an organization (IT or Service Desk, for example). </li>
-							</ul>
-						<h4 style="padding-top: 25px"> Capabilities </h4>
-							<ul class="list-group">
-								<li class="list-group-item"> + Attempt to gather corporate user's domain credentials. </li>
-								<li class="list-group-item"> + Phishing 2FA / MFA codes. </li>
-								<li class="list-group-item"> + Attempt to gain remote access to internal network, desktop workstations, internal & external applications and services. </li>
-							</ul>
-						
-						<h4 style="padding-top: 25px"> Examples </h4>
 							
-						<div class="well">
-							<p> Hi {{.User}}, </p>
-							<p> The IT service desk is currently auditing all categories of accounts that are no longer required. Any user accounts which are no longer required will be deactivated and removed from the system. <p>
-							<p> We require all staff verify that the account is active by logging in here. </p>
-							<p> If you account is not confirmed within 48 hours, your account will be deactivated and you will not be able to access our internal services. </p>
-
-							<p> Best Regards, </p>
-							<p> Service Desk</p>
-						</div>					
-					
-		            </div>
-		        </div>
-		    </div>
+							<h4> Description </h5>
+							<p>A targeted phishing email that is sent to a particular group of users with higher privilege within the organisation. This could be IT staff, members of the Finance department or C-level managers. This attack targets privileged users credentials or attempts to get invoices paid in error. Often knwon as spear phishing.  </p>
+	
+							<h4 style="padding-top: 25px;"> Characteristics </h5>
+								<ul class="list-group">
+									<li class="list-group-item"> + Personalised greeting. </li>
+									<li class="list-group-item"> + Target may be required to enter credentials. </li>
+									<li class="list-group-item"> + Appear to be sent from within an organization (C-level managers). </li>
+									<li class="list-group-item"> + Give other types of management-level orders. </li>
+									<li class="list-group-item"> + May ask for transaction authorizations. </li>
+								</ul>
+							<h4 style="padding-top: 25px"> Capabilities </h4>
+								<ul class="list-group">
+									<li class="list-group-item"> + Attempt to gather domain credentials for high privileged accounts (IT staff, C-level staff). </li>
+									<li class="list-group-item"> + Attempt to exfiltrate money from the organization. </li>
+								</ul>
+							
+							<h4 style="padding-top: 25px"> Examples </h4>
+								
+							<div class="well">
+								<p> Hi {{.User}}, </p>
+								<p> I have managed to secure a major deal for {{.Scenario}} during my {{.OutOfOfficeActivity}} today.<p>
+								<p> Now I need you to make a wire transfer for me ASAP. It needs to be made before the banks close! Let me know if you can do this and I'll send you the details. </p>
+								
+								<p> Best Regards, </p>
+								<p> {{.BossContactDetails}}</p>
+							</div>	
+						
+			            </div>
+			        </div>
+			    </div>
+				
+				<div class="text-right" style="padding-top: 10px">
+					<button id="submissionButton" class="btn btn-primary" type="submit" value="Submit"> Submit </button> 
+				</div> 
+			</div>
 			
-			 <div class="panel panel-default">
-		        <div class="panel-heading">
-		            <h4 class="panel-title">
-		                <a class="accordion-toggle" data-toggle="collapse" href="#collapseFour"> 4. Expert</a>
-		            </h4>
-		        </div>
-		        <div id="collapseFour" class="panel-collapse collapse" data-parent="#optionsAccordion">
-		            <div class="panel-body">
-						<div class="text-center">
-							<img src="assets/images/phishing_expert.png"  width=300px>
-						</div>
-						
-						<h4> Description </h5>
-						<p>A targeted phishing email that is sent to a particular group of users with higher privilege within the organisation. This could be IT staff, members of the Finance department or C-level managers. This attack targets privileged users credentials or attempts to get invoices paid in error. Often knwon as spear phishing.  </p>
-
-						<h4 style="padding-top: 25px;"> Characteristics </h5>
-							<ul class="list-group">
-								<li class="list-group-item"> + Personalised greeting. </li>
-								<li class="list-group-item"> + Target may be required to enter credentials. </li>
-								<li class="list-group-item"> + Appear to be sent from within an organization (C-level managers). </li>
-								<li class="list-group-item"> + Give other types of management-level orders. </li>
-								<li class="list-group-item"> + May ask for transaction authorizations. </li>
-							</ul>
-						<h4 style="padding-top: 25px"> Capabilities </h4>
-							<ul class="list-group">
-								<li class="list-group-item"> + Attempt to gather domain credentials for high privileged accounts (IT staff, C-level staff). </li>
-								<li class="list-group-item"> + Attempt to exfiltrate money from the organization. </li>
-							</ul>
-						
-						<h4 style="padding-top: 25px"> Examples </h4>
-							
-						<div class="well">
-							<p> Hi {{.User}}, </p>
-							<p> I have managed to secure a major deal for {{.Scenario}} during my {{.OutOfOfficeActivity}} today.<p>
-							<p> Now I need you to make a wire transfer for me ASAP. It needs to be made before the banks close! Let me know if you can do this and I'll send you the details. </p>
-							
-							<p> Best Regards, </p>
-							<p> {{.BossContactDetails}}</p>
-						</div>	
-					
-		            </div>
-		        </div>
-		    </div>
 			
-			<div class="text-right" style="padding-top: 10px">
-				<button id="submissionButton" class="btn btn-primary" type="submit" value="Submit"> Submit </button> 
-			</div> 
+		
 		</div>
-		
-		
-	
 	</div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			
 			$('#submissionButton').on('click', function(e) {
 				e.preventDefault();
-				$.ajax({
-					url: $('#submission').attr('action'),
-					type: "GET",
-					data: $('#submission').serialize(),
-					
-					success: function(data) {
-						$('#submissionButton').css("background-color", "#039803");
-						console.log(data);
-						//$('.starter-template').replaceWith(data);
-						
-					},
-					
-					error: function(jXHR, text, error) {
-						$('#submissionButton').css("background-color", "#e62e00");
-					}
-				});
+				
+				$('#submission').submit();
 
 			});
-			
-			
+
 			$('.collapse').on('shown.bs.collapse', function(e){
 			
 				$('html,body').animate({
